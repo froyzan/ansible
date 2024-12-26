@@ -27,8 +27,7 @@ my_ansible_project/
   <img src="ans_nginx1.jpg" alt="ansible_nginx" />
 </p>
 
-Найдите IP-адрес из `hosts.ini`, и откройте его в браузере.
-`<link>` : <http://192.168.1.77/>
+Найдите IP-адрес из `hosts.ini`, и откройте его в браузере. `<link>` : <http://192.168.1.77/>
 <p align="center">
   <img src="ans_nginx2.jpg" alt="ansible_nginx" />
 </p>
