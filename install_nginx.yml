@@ -1,0 +1,39 @@
+---
+- name: Установка и настройка Nginx
+  hosts: all
+  become: yes
+  gather_facts: false
+
+  vars:
+    index_html_src: files/index.html
+    index_html_dest: /var/www/html/index.html
+
+  tasks:
+    - name: Обновление кэша apt
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Установка Nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Запуск Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Копирование файла index.html в директорию Nginx
+      ansible.builtin.copy:
+        src: "{{ index_html_src }}"
+        dest: "{{ index_html_dest }}"
+      notify:
+        - Restart Nginx
+
+  handlers:
+    - name: Restart Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+
