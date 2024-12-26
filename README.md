@@ -8,12 +8,12 @@
 my_ansible_project/
 ├── README.md
 ├── files
-│   └── index.html
+│   └── index.html      # HTML файл для веб-страницы Nginx
 ├── group_vars
-│   └── my_hosts.yml
-├── hosts.ini
-├── install_nginx.yml
-└── ping_hosts.yml
+│   └── my_hosts.yml    # Ansible vars file
+├── hosts.ini           # Ansible inventory file
+├── install_nginx.yml   # Ansible плейбук для установки Nginx
+└── ping_hosts.yml      # Ansible плейбук для ping
 ```
 
 ### Использование
